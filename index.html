@@ -63,8 +63,8 @@
             align-items: center;
             justify-content: center;
             background: #f9f9f9;
-            font-family: 'Silkscreen', cursive !important;
-            z-index: 15;
+            font-family: 'Silkscreen', cursive;
+            z-index: 30;
             line-height: 1.5;
         }
 
@@ -182,13 +182,13 @@
             box-shadow: 0px 0px 0px 0px #007144;
         }
 
-        #portfolio{
+        /* #portfolio{
             height: 1000px;
         }
 
         #bottom{
             height: 1000px;
-        }
+        } */
     </style>
 </head>
 
@@ -255,8 +255,26 @@
     </div>
     <script>
 
-        $(document).ready(function(){
+            window.onload = function(){
+                setTimeout(function(){
+                    scrollTo(0,0);
+                },0);
+            }
 
+
+        $(document).ready(function(){
+            $('.start-button').click(function() {
+                $('#start').off('scroll touchmove mousewheel');
+                let location = document.querySelector('#resume').offsetTop;
+                $('html,body').animate({scrollTop:location},0);
+            });
+            
+            $('#start').on('scroll touchmove mousewheel', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            });
+            
             const fadeOut = 'magictime fadeOut';
             const fadeIn = 'magictime fadeIn';
             const more = 'show';
@@ -278,24 +296,6 @@
             $(back).addClass(more).removeClass(close);
             });
 
-            window.onload = function(){
-                setTimeout(function(){
-                    scrollTo(0,0);
-                })
-            }
-
-            $('.start').on('scroll touchmove mousewheel', function(event) {
-                event.preventDefault();
-                event.stopPropagation();
-                return false;
-            });
-    
-            $('.start-button').click(function() {
-                $('.start').off('scroll touchmove mousewheel');
-                let location = document.querySelector('#resume').offsetTop;
-                $('html,body').animate({scrollTop:location},0);
-            });
-            
         });
     </script>
 </body>

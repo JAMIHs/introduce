@@ -17,8 +17,16 @@
     });
         </script>
     <script src="wow.min.js"></script>
+    <script>    
+    window.onload = function(){
+        setTimeout(function(){
+            scrollTo(0,0);
+        },100);
+    }</script>
     <style>
         *{scroll-behavior:smooth;}
+
+        #load{width:100%;height:100%;top:0;left:0;position:fixed;display:block;opacity:1;background:#fff;z-index:299;}
 
         .menu{
             position: fixed;
@@ -193,6 +201,7 @@
 </head>
 
 <body>
+    <div id="load"></div>
     <div class="menu_background close2"></div>
     <div class="menu">
         <ul class="inside close2">
@@ -253,14 +262,10 @@
        <h2>thank you for watching!</h2>
       <h2> have a good day~!</h2>
     </div>
-    <script>
-
-            window.onload = function(){
-                setTimeout(function(){
-                    scrollTo(0,0);
-                },0);
-            }
-
+    <script>     
+    $(window).load(function() {
+        $('#load').hide();
+    });
 
         $(document).ready(function(){
             $('.start-button').click(function() {

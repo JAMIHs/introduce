@@ -18,12 +18,6 @@
     });
         </script>
     <script src="wow.min.js"></script>
-    <script>    
-    window.onload = function(){
-        setTimeout(function(){
-            scrollTo(0,0);
-        },100);
-    }</script>
     <style>
         *{scroll-behavior:smooth;}
 
@@ -75,7 +69,7 @@
 
         #start{
             width: 100%;
-            height: 50vw;
+            height: 52vw;
             margin: 0 auto;
             display: flex;
             align-items: center;
@@ -210,8 +204,33 @@
         }
 
         #bottom{
-            height: 1000px;
+            height: 52vw;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            font-size: 70px;
+            font-family: 'Silkscreen', cursive;
         } 
+
+        #bottom h2::after{
+            content:"";
+            height:50px;
+            margin-left: 5px;
+            width:5px;
+            background-color:#000;
+            display:inline-block;
+            animation: blink .7s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
     </style>
 </head>
 
@@ -247,7 +266,7 @@
         <h2> 성격 및 가치관</h2>
         <h2> 입사 후 포부</h2>
         </div>
-        <div class="section2_2 wow fadeInRight"  data-wow-delay="0.6s">
+        <div class="section2_2 wow fadeInRight"  data-wow-delay="1.2s">
         <p>모든 국민은 통신의 비밀을 침해받지 아니한다. 모든 국민은 고문을 받지 아니하며, 형사상 자기에게 불리한 진술을 강요당하지 아니한다. 외국인은 국제법과 조약이 정하는 바에 의하여 그 지위가 보장된다.
 
             대통령후보자가 1인일 때에는 그 득표수가 선거권자 총수의 3분의 1 이상이 아니면 대통령으로 당선될 수 없다. 사법권은 법관으로 구성된 법원에 속한다.
@@ -267,21 +286,24 @@
     </section>
 </div>
     <section id="portfolio">
-       <h2>프로젝트 포트폴리오</h2>
-
-        <h2>자격증 사본</h2>
-
+       <img style="width: 500px; float: left;" src="skill.png" alt="">
+       <h2>프로젝트1</h2>
+       <h2>프로젝트2</h2>
     </section>
-
+<div class="gray">
     <div id="bottom">
-       <h2>thank you for watching!</h2>
-      <h2> have a good day~!</h2>
+       <h2></h2>
     </div>
+</div>
     <script>     
     $(window).load(function() {
         $('#load').hide();
     });
-
+    window.onload = function(){
+        setTimeout(function(){
+            scrollTo(0,0);
+        },100);
+    }
         $(document).ready(function(){
             $('.start-button').click(function() {
                 $('#start').off('scroll touchmove mousewheel');
@@ -324,6 +346,34 @@
                 }
             });
             });
+
+            const spanEl = document.querySelector("#bottom h2");
+            const txtArr = ['Thank you for watching!','Have a good day~!'];
+            let index = 0;
+            let currentTxt = txtArr[index].split("");
+
+            function writeTxt(){
+                spanEl.textContent += currentTxt.shift(); 
+                if(currentTxt.length !== 0){ 
+                setTimeout(writeTxt, Math.floor(Math.random() * 100));
+                }else{ 
+                currentTxt = spanEl.textContent.split("");
+                setTimeout(deleteTxt, 3000);
+                }
+            }
+            writeTxt();
+
+            function deleteTxt(){
+                currentTxt.pop(); 
+                spanEl.textContent = currentTxt.join("");
+                if(currentTxt.length !== 0){ 
+                setTimeout(deleteTxt, Math.floor(Math.random() * 100));
+                }else{ // ④
+                index = (index + 1) % txtArr.length;
+                currentTxt = txtArr[index].split("");
+                writeTxt();
+                }
+            }
         });
     </script>
 </body>

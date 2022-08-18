@@ -10,6 +10,7 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <title>introduce</title>
     <script>
      $(document).ready(function() {
@@ -37,17 +38,26 @@
             width: 100px;
             border-radius: 50px;
             cursor: pointer;
-            z-index: 20;
+            z-index: 10;
         }
 
-        .menu ul li a {
-            right: 130px;
+        .menu ul{
+            height: 100px;
+            width: 20%;
+        }
+
+        .menu ul li {
+            width: 100%;
+            right: 220px;
+            top: -180px;
             position: relative;
-            line-height: 2.5  ;
-            top: -75px;
+        }
+        .menu ul li a {
+            position: relative;
+            line-height: 3;
             color: #111;
-            font-size: 20px;
-            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 30px;
+            font-family: 'Bebas Neue', cursive;
         }
 
         .menu ul li a:hover {
@@ -77,7 +87,7 @@
 
         .show{opacity: 1;}
         .close{opacity: 0;}
-        .close2{opacity: 0; display:none;}
+        .close2{display:none;}
 
         #start p{
             text-align: center;
@@ -283,20 +293,22 @@
             
             const fadeOut = 'magictime fadeOut';
             const fadeIn = 'magictime fadeIn';
+            const slideLeftReturn = 'magictime spaceOutRight';
+            const slideLeft = 'magictime spaceInRight';
             const more = 'show';
             const close = 'close2';
             const menu = '.inside';
             const back = '.menu_background';
             $('.menu').click(function() {
             if($(menu).hasClass(more)){
-                $(menu).addClass(fadeOut);
+                $(menu).addClass(slideLeftReturn);
                 $(back).addClass(fadeOut);
                  setTimeout(function() { $(menu).addClass(close).removeClass(more); $(back).addClass(close).removeClass(more);}, 500);
             }
              else if($(menu).hasClass(close))
-            $(menu).removeClass(fadeOut);
+            $(menu).removeClass(slideLeftReturn);
             $(back).removeClass(fadeOut);
-            $(menu).addClass(fadeIn);
+            $(menu).addClass(slideLeft);
             $(back).addClass(fadeIn);
             $(menu).addClass(more).removeClass(close);
             $(back).addClass(more).removeClass(close);

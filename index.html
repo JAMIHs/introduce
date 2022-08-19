@@ -69,7 +69,7 @@
 
         #start{
             width: 100%;
-            height: 52vw;
+            height: 56vw;
             margin: 0 auto;
             display: flex;
             align-items: center;
@@ -156,8 +156,7 @@
             background: #f9f9f9;
         }
 
-        section img{
-            display: flex;
+        #resume img{
             margin: 0 auto;
             text-align: center;
             width: 100%;
@@ -205,6 +204,14 @@
             height: 550px;
         }
 
+        #portfolio a, #portfolio a:visited{
+            color: blue;
+        } 
+
+        #portfolio a:hover{
+            color:#BBBBBB;
+            transition: .2s;
+        }
         #portfolio .tong{
             display: flex;
             flex-direction: row;
@@ -216,8 +223,11 @@
             position: absolute;
             background: #BBBBBB;
             border-radius: 15px 15px 0 0;
-            color: #fff;
             font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        #portfolio .tong a{
+            color: #fff;
         }
 
         #portfolio ul li{
@@ -226,12 +236,19 @@
             font-size: 20px;
         }
 
+        
+        #portfolio .tong a:hover{
+            color: dimgray;
+            transition: .5s;
+        }
+
         #portfolio h2{
-            font-size: 40px;
+            font-size: 45px;
             height: 130px;
             align-items: center;
             display: flex;
             font-family: 'Bebas Neue', cursive;
+            margin-top: 120px;
         }
 
         #portfolio ul li ul{
@@ -258,7 +275,7 @@
         }
 
         #bottom{
-            height: 52vw;
+            height: 56vw;
             text-align: center;
             justify-content: center;
             align-items: center;
@@ -289,7 +306,7 @@
         .resoft_img p{
             text-align: center;
             font-size: 20px;
-            line-height: 4;
+            line-height: 8;
             font-weight: 700;
         }
 
@@ -302,10 +319,51 @@
         }
 
         .resoft_exp{
-            line-height: 1.6;
+            line-height: 1.8;
             font-size: 20px;
         }
+        
+        .exp_img{
+            display: inline-flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            align-content: center;
+            width: 100%;
+            color: #737373;
+            margin-top: 50px;
+        }
 
+        .exp_img .explain:nth-child(2n-1){
+            background: #f9f9f9;
+        }
+        .exp_img img{
+            margin: 80px;
+        }
+
+        .explain{
+            flex-direction: row;
+            display: flex;
+            width: 100%;
+        }
+
+        .explain p{
+            margin-bottom: 30px;
+            padding-left: 0px;
+        }
+        .text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            padding: 40px;
+        }
+
+        .title{
+            font-size: 25px;
+            font-weight: 700;
+        }
         @keyframes blink {
   0%{
     opacity: 1;
@@ -372,12 +430,12 @@
     <section id="portfolio">
         <div class="height">
             <h2>What I can do</h2>
-        <ul class="tong">
+        <ul class="tong wow fadeInLeft">
             <li>
                 <a class="folio">html, css</a>
                 <ul class="port close2">
                     <li>기본적인 페이지 작성 후 출력 가능</li>
-                    <li>페이지 구조 잡기</li>
+                    <li>페이지 최적화 작업</li>
                     <li>이미지 호출 및 수정(필터 등)</li>
                     <li>css를 사용한 여러가지 애니메이션<br> 적용가능, 라이브러리 사용가능</li>
                     <li>선택자와 태그의 이해</li>
@@ -422,7 +480,7 @@
         <p><strong>기간 </strong>: 2022.7.1 ~ 2022.7.15</p>
         <p><strong>완성된 웹 사이트 </strong> : <a href="https://jamihs.github.io/JAI/resoft/index.html">https://jamihs.github.io/JAI/resoft/index.html</a></p>
         </div>
-        <div class="resoft_img">
+        <div class="resoft_img wow fadeIn" data-wow-delay="0.7s">
             <div>
             <p>담당 파트 요구 시안</p>
             <img src="image.png" alt="">
@@ -440,9 +498,14 @@
             <p><strong>기간 </strong>: 2022.7.18 ~ 2022.8.12</p>
             <p><strong>완성된 웹 사이트</strong> : <a href="https://jang-gwang.github.io/toco-renewal/index.html">https://jang-gwang.github.io/toco-renewal/index.html</a></p>
             <p> <strong> 기본 시안</strong> : <a href="https://xd.adobe.com/view/f608027b-e8cb-443a-a512-91ead94bf53e-a35b/specs/">https://xd.adobe.com/view/f608027b-e8cb-443a-a512-91ead94bf53e-a35b/specs/</a></p>
-            <img style="width: 300px; height: 700px; margin: 20px 0;" src="image2.png" alt="">
-            <p>담당 파트</p>
-
+            <div class="exp_img">
+                <div class="explain wow fadeInRight" data-wow-delay="0.7s"><img style="width: 300px; height: 400px;" src="image2.png" alt=""> <div class="text"> <p class="title">담당파트</p><p>회사소개 페이지의 하단부와 메뉴바 작성을 맡았습니다.</p> <p>조직도와 특허&인증 그리고 오시는 길 작성을 하였고 1440px의 컨텐츠 공간 안에 모두 보이도록 적용하였습니다. <br>또 미디어 쿼리를 주어서 어떤 기기의 화면크기라도 잘 나올 수 있게 조정하였습니다.</p> </div> </div>
+                <div class="explain wow fadeInLeft" data-wow-delay="0.7s"> <div class="text"> <p class="title"> 메인 메뉴바</p> <p>스크롤 시 스타일의 변화(로고, 배경, 글자색)와 돌아왔을 때 초기화 되는 것 그리고 햄버거 버튼을 클릭 하였을 때 메뉴바가 나오는 효과, 인터넷 창을 줄였을 때 바뀌는 메뉴창이 있습니다.</p> <p>상세 코드 : <a href="https://velog.io/@jamih/810-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80">개발 일지</a></p> </div><img style="width: 600px; height: 350px;" src="image1.gif" alt=""></div>
+                <div class="explain wow fadeInRight" data-wow-delay="0.7s"><img style="width: 600px; height: 350px; " src="image2.gif" alt=""> <div class="text"> <p class="title"> 메뉴바</p> <p>위의 메뉴바와 다르게 색이 변하지 않지만 슬라이드로 작동을 하게 하였고 슬라이드가 다 내려왔을 시 글자가 나타나게 수정하였습니다. 현재 페이지에는 시안에 맞게 하기위해 적용되어 있지는 않습니다.</p> <p>상세 코드 : <a href="">개발 일지</a></p> </div></div>
+                <div class="explain wow fadeInLeft" data-wow-delay="0.7s"><div class="text"> <p class="title"> 연혁 & 인증 + 추가 구현</p><p>그리드를 사용해 틀을 잡고 기본 3x3크기로 보이게 하였고 768px 이하로 내려가면 2행, 480px 이하면 1행으로 나오게 하였습니다.</p> <p>추가로 창화면이 줄었을때 스크롤이 길어져 불편함을 해소하기 위해 더보기 버튼과 줄이기 버튼을 구현하였습니다.</p> <p>상세 코드 : <a href="https://velog.io/@jamih/84-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80">개발 일지</a></p> </div><img style="width:600px; height: 350px;" src="image3.gif" alt=""> </div>
+                <div class="explain wow fadeInRight" data-wow-delay="0.7s"><img style="width:600px; height: 350px; " src="image1.png" alt=""> <div class="text"> <p class="title"> 조직도</p> <p>before와 after를 사용하여 선을 만들어 위치를 잡아주는 형식으로 작업하였습니다. 그리고 fadein효과를 주고 대표이사부터 차례대로 delay조정을 하였습니다.</p> <p>상세 코드 : <a href="https://velog.io/@jamih/727-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80">개발 일지</a></p></div></div>
+                <div class="explain wow fadeInLeft" data-wow-delay="0.7s"><div class="text"> <p class="title"> 오시는 길</p> <p>카카오 API를 가져와서 적용시킨뒤 작성하였습니다. </p> <p>상세 코드 : <a href="https://velog.io/@jamih/720-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80">개발 일지</a></p></div><img style="width:600px; height: 350px; " src="image3.png" alt=""> </div>
+            </div>
         </div>
     </section>
         <div class="gray">
@@ -451,14 +514,14 @@
             </div>
         </div>
     <script>     
-    $(window).load(function() {
-        $('#load').hide();
-    });
-    window.onload = function(){
-        setTimeout(function(){
-            scrollTo(0,0);
-        },100);
-    }
+        $(window).load(function() {
+            $('#load').hide();
+        });
+        window.onload = function(){
+            setTimeout(function(){
+                scrollTo(0,0);
+            },100);
+        }
         $(document).ready(function(){
             $('.start-button').click(function() {
                 $('#start').off('scroll touchmove mousewheel');
@@ -507,16 +570,6 @@
             let index = 0;
             let currentTxt = txtArr[index].split("");
 
-            function writeTxt(){
-                spanEl.textContent += currentTxt.shift(); 
-                if(currentTxt.length !== 0){ 
-                setTimeout(writeTxt, Math.floor(Math.random() * 100));
-                }else{ 
-                currentTxt = spanEl.textContent.split("");
-                setTimeout(deleteTxt, 3000);
-                }
-            }
-            writeTxt();
 
             const port = '.port, .qor';
             $('.folio').click(function() {
@@ -529,6 +582,17 @@
                 $(port).addClass(fadeIn);
                 $(port).addClass(more).removeClass(close);
             });
+
+            function writeTxt(){
+                spanEl.textContent += currentTxt.shift(); 
+                if(currentTxt.length !== 0){ 
+                setTimeout(writeTxt, Math.floor(Math.random() * 100));
+                }else{ 
+                currentTxt = spanEl.textContent.split("");
+                setTimeout(deleteTxt, 3000);
+                }
+            }
+            writeTxt();
 
             function deleteTxt(){
                 currentTxt.pop(); 

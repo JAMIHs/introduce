@@ -1,622 +1,177 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"/>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="./main.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">    
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="animate.css">
-    <link rel="stylesheet" href="magic.css">
-    <script src="https://code.jquery.com/jquery-latest.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <title>introduce</title>
-    <script>
-     $(document).ready(function() {
-    new WOW().init();
-    });
-        </script>
-    <script src="wow.min.js"></script>
-    <style>
-        *{scroll-behavior:smooth;  font-family: 'Noto Sans KR', sans-serif; }
-
-        #load{width:100%;height:100%;top:0;left:0;position:fixed;display:block;opacity:1;background:#fff;z-index:299;}
-
-        .menu{
-            position: fixed;
-            right: -75px;
-            top: 43%;
-            background: #737373;
-            height: 150px;
-            width: 150px;
-            border-radius: 50%;
-            cursor: pointer;
-            z-index: 10;
-        }
-
-        .menu ul{
-            height: 150px;
-            width: 20%;
-        }
-
-        .menu:hover{
-            background: #000;
-            transition: .7s;
-        }
-
-        .menu ul li {
-            width: 100%;
-            right: 230px;
-            top: -150px;
-            position: relative;
-        }
-        .menu ul li a {
-            position: relative;
-            line-height: 3;
-            color: #111;
-            font-size: 30px;
-            font-family: 'Bebas Neue', cursive;
-        }
-
-        .menu ul li a:hover {
-            color:white;
-        }
-
-        .menu_background{
-            width: 100%;
-            height: 100%;
-            background: rgba(115, 115, 115,0.5);
-            position: fixed;
-            backdrop-filter: blur(5px);
-            z-index: 10;
-        }
-
-        #start{
-            width: 100%;
-            height: 56vw;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #f9f9f9;
-            line-height: 1.5;
-        }
-
-        .show{opacity: 1;}
-        .close{opacity: 0;}
-        .close2{display:none !important;}
-
-
-        #start p{
-            text-align: center;
-            font-size: 90px;
-            position: absolute;
-        }
-
-        #start button{
-            position: absolute;
-            width: 300px;
-            height: 100px;
-            font-size: 50px;
-        }
-
-        #start .title2{
-            position: absolute;
-        }
-        section{
-            max-width: 1440px;
-            margin: 0 auto;
-        }
-
-        #resume{
-            padding: 100px 0;
-        }
-
-        #section2{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            align-content: center;
-            height: 1000px;
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-        .section2_1{
-            display: inline-flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: space-evenly;
-            align-items: flex-start;
-            align-content: center;
-            width: 20%;
-            border-right: rgba(115, 115, 115, .2) 5px dashed;   
-            font-size: 30px;
-            color: #737373;
-            margin-left: 20px;
-            padding-right: 20px;
-        }
-
-        .section2_1 h2{
-            height: 150px;
-            line-height: 1.5;
-        }
-
-        .section2_2{
-            display: inline-flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: space-evenly;
-            align-items: center;
-            align-content: center;
-            width: 80%;
-            padding-left: 50px;
-            font-size: 20px;
-            margin-right: 20px;
-        }
-
-        .section2_2 p{
-            line-height: 1.5;
-        }
-
-        .gray{
-            background: #f9f9f9;
-        }
-
-        #resume img{
-            margin: 0 auto;
-            text-align: center;
-            width: 100%;
-        }
-
-        a, a:visited {
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .btnBlueGreen {
-            background: #BBBBBB;
-        }
-    
-        a.button {
-            display: block;
-            position: absolute;
-            float: left;
-            width: 120px;
-            padding: 0;
-            margin: 10px 20px 10px 0;
-            font-weight: 600;
-            text-align: center;
-            line-height: 50px;
-            color: #FFF;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .btnBlueGreen.btnPush {
-            box-shadow: 0px 5px 0px 0px #111;
-            transition: 0.2s ;
-        }
-        .btnPush:hover {
-            margin-top: 15px;
-            margin-bottom: 5px;
-        }
-
-        .btnBlueGreen.btnPush:hover {
-            transition: 0.2s ;
-            box-shadow: 0px 0px 0px 0px #007144;
-        }
-        
-        #portfolio .height{
-            height: 550px;
-        }
-
-        #portfolio a, #portfolio a:visited{
-            color: blue;
-        } 
-
-        #portfolio a:hover{
-            color:#BBBBBB;
-            transition: .2s;
-        }
-        #portfolio .tong{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            align-items: center;
-            text-align: start;
-            height: 70px;
-            position: absolute;
-            background: #BBBBBB;
-            border-radius: 15px 15px 0 0;
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-
-        #portfolio .tong a{
-            color: #fff;
-        }
-
-        #portfolio ul li{
-            width: 300px;
-            margin:0 30px;
-            font-size: 20px;
-        }
-
-        
-        #portfolio .tong a:hover{
-            color: dimgray;
-            transition: .5s;
-        }
-
-        #portfolio h2{
-            font-size: 45px;
-            height: 130px;
-            align-items: center;
-            display: flex;
-            font-family: 'Bebas Neue', cursive;
-            margin-top: 120px;
-        }
-
-        #portfolio ul li ul{
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            align-items: flex-start;
-            align-content: center;
-            line-height: 1.5;
-            text-align: left;
-            position: absolute;
-            margin-top: 30px;
-        }
-
-        #portfolio ul li ul li {
-            height: 60px;
-            justify-content: start;
-            align-items: center;
-            display: flex;
-            width: 300px;
-            margin: 0 0 0 auto;
-            color: #111;
-            font-size: 18px;
-        }
-
-        #bottom{
-            height: 56vw;
-            text-align: center;
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            font-size: 70px;
-            line-height: 1.5;
-        } 
-
-        #bottom h2::after{
-            content:"";
-            height:60px;
-            margin-left: 5px;
-            width:5px;
-            background-color:#000;
-            display:inline-block;
-            animation: blink .7s ease-in-out infinite;
-        }
-
-        .resoft_img{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            justify-content: space-evenly;
-            align-items: baseline;
-            align-content: center;
-        }
-        
-        .resoft_img p{
-            text-align: center;
-            font-size: 20px;
-            line-height: 8;
-            font-weight: 700;
-        }
-
-
-        .resoft_img img{
-            display: flex;
-            width: 500px;
-            height: 300px;
-            justify-content: space-between;
-        }
-
-        .resoft_exp{
-            line-height: 1.8;
-            font-size: 20px;
-        }
-        
-        .exp_img{
-            display: inline-flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            justify-content: space-evenly;
-            align-items: flex-start;
-            align-content: center;
-            width: 100%;
-            color: #737373;
-            margin-top: 50px;
-        }
-
-        .exp_img .explain:nth-child(2n-1){
-            background: #f9f9f9;
-        }
-        .exp_img img{
-            margin: 80px;
-        }
-
-        .explain{
-            flex-direction: row;
-            display: flex;
-            width: 100%;
-        }
-
-        .explain p{
-            margin-bottom: 30px;
-            padding-left: 0px;
-        }
-        .text{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            width: 100%;
-            padding: 40px;
-        }
-
-        .title{
-            font-size: 25px;
-            font-weight: 700;
-        }
-        @keyframes blink {
-  0%{
-    opacity: 1;
-  }
-  100%{
-    opacity: 0;
-  }
-  
-}
-
-@media screen and (max-width:1919px) {
-    #start{
-            height: 52vw;
-        }
-
-}
-    </style>
+    <title>yh's portfolio</title>
 </head>
-
-<body>
-    <div id="load"></div>
-    <div class="menu_background close2"></div>
-    <div class="menu">
-        <img class="menu1"style="position: absolute; top:60px; left:30px" src="icon-menu.svg" alt="">
-        <ul class="inside close2">
-            <li><a href="#start">top</a></li>
-            <li><a href="#resume">resume</a></li>
-            <li><a href="#section2">introduce</a></li>
-            <li><a href="#portfolio">portfolio</a></li>
-            <li><a href="#bottom">bottom</a></li>
-        </ul>
+<body>          
+    <h1>Song Yeon Hui</h1>
+    <div class="menudiv">
+        <div class="close">     
+            <span class="menubutton">   
+                <img src="./icon/menu.png" style="height: 70px; width: 70px; padding: 10px 30px;"  draggable="false">
+            </span>
+        </div>
+        <div class="menu">
+            <ul class="tabnav">
+                <li><a href="#tab00">소개</a></li>
+                <li><a href="#tab01">카드뉴스</a></li>
+                <li><a href="#tab02">상세</a></li>
+                <li><a href="#tab03">명함</a></li>
+                <li><a href="#tab04">배너</a></li>
+                <li><a href="#tab05">포스터</a></li>
+                <li><a href="#tab06">PPT</a></li>
+                <li><a href="#tab07">알림</a></li>
+                <li><a href="#tab08">블로그</a></li>
+                <li><a href="#tab09">제품</a></li>
+                <li><a href="#tab10">카드뷰</a></li>
+            </ul>
+        </div>
     </div>
-
-    <div id="start">
-    <div class="start_1" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; padding-bottom: 10vw;">
-        <p class="hello wow fadeInDown close" data-wow-delay="1s">Hello World!</p>
-        <p class="let title2 wow fadeInDown close" data-wow-delay="3s">Let Me <br> Introduce Myself...</p>
-        <a class="button btnPush btnBlueGreen start-button wow fadeInDown" data-wow-delay="5s">start</a>
-    </div>
-    </div>
-
-    <section id="resume">
-        <img class="wow fadeIn" data-wow-delay="0.4s" src="introduce1.png" alt="이력서 이미지">
-        <img class="wow fadeIn" data-wow-delay="0.6s" src="introduce2.png" alt="이력서 이미지">
-        <img class="wow fadeIn" data-wow-delay="0.4s" src="introduce3.png" alt="이력서 이미지">
-        <img class="wow fadeIn" data-wow-delay="0.6s" src="introduce4.png" alt="이력서 이미지">
-    </section>
-
-    <div class="gray">
-    <section id="section2">
-        <div class="section2_1 wow fadeInLeft"  data-wow-delay="0.6s">
-        <h2 style="padding-top: 55px;">성격 및 가치관</h2>
-        <h2 style="margin-top: 150px;">지원 동기</h2>
-        <h2>입사 후 포부</h2>
+    <div class="tabcover"></div>
+    <div class="tab">
+        <div class="tabcontent">
+        <div id="tab00" style="display: flex; flex-direction: column;">
+                <img src="./intro/KakaoTalk_20240523_003429585_01.jpg" alt="" style="width: auto;">
+                <img src="./intro/KakaoTalk_20240523_003429585.jpg" alt="" style="width: auto;">
         </div>
-        <div class="section2_2 wow fadeInRight"  data-wow-delay="1.2s">
-        <p> 
-            &nbsp;저는 처음 보는 것에도 호기심을 가지고 풀어보는 것을 좋아합니다. <br>
-            초등학교 시절 당시에는 풀기 어려운 퍼즐이 있었습니다. 처음에는 그냥 아무 생각 없이 막 아무거나 눌러봤는데 엉망이 되었습니다. 풀리지 않으니 짜증 나고 포기하고 싶었습니다.
-            그때 딱 생각이 들었습니다. 이렇게 아무 생각 없이 하고 있는데 풀릴 리가 있나! 그래서 하나하나 알아가기로 했습니다. 이걸 이렇게 하면 이렇게 바뀌는구나, 이러면 어떻게 될까 시도하며 원리를 이해하기 시작했습니다.
-            그랬더니 조금씩 변화가 일어났습니다. 아직 도입부였지만 단계가 익숙해지고 경험이 쌓이니 길이 보이며 나아가는 것을 보았습니다. 이러한 것을 느끼며 경험하니 성취감이 엄청나게 느껴졌습니다.
-            이를 바탕으로 이것저것 시도해 보니 자신감도 생기고 도전정신도 생기게 되었습니다. 이를 바탕으로 AI 스쿨에 참여도 해보고 귀사의 기업에도 지원할 기회를 얻게 되어서 영광입니다.
-
-        <p> &nbsp;대구 AI스쿨의 수업을 들으며 AI분야에서는 어떤 것을 하는지 뿐만 아니라 웹개발 등 여러가지에 대해 교육을 받으며 굉장히 넓고 내가 배울 수 있는 방향도 많겠다는 것을 느꼈습니다. 보내주신 소개서를 통하여 알아본 결과 귀사에서 함께 발전 할 수 있을 기회가 확실히 있다고 생각하여 지원하게 되었습니다.</p>
-        <p> &nbsp;위와 같이 지원동기에 나와있는 것을 바탕으로 저는 여러 가지 기술을 습득함으로써 시너지효과를 내어 발전해나가고 싶습니다. 단순히 AI 쪽만 한다고 해서 AI 분야에 한정되는 것만이 아니라 비슷하거나 응용이 되는 다른 분야에 접목해 귀사에 새로운 방향성을 제시할 수 있는 사람이 되고 싶습니다. </p>
+        <div id="tab01">
+            <img src="./2.CARDNEWS/CARDNEWS_1.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_2.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_3.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_4.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_5.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_6.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_7.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_8.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_9.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_10.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_11.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_12.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_13.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_14.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_15.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_16.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_17.jpg" alt="">
+            <img src="./2.CARDNEWS/CARDNEWS_18.jpg" alt="">
         </div>
-    </section>
-</div>
-    <section id="portfolio">
-        <div class="height">
-            <h2>What I can do</h2>
-        <ul class="tong wow fadeInLeft">
-            <li>
-                <a class="folio">html, css</a>
-                <ul class="port close2">
-                    <li>기본적인 페이지 작성 후 출력 가능</li>
-                    <li>페이지 최적화 작업</li>
-                    <li>이미지 호출 및 수정(필터 등)</li>
-                    <li>css를 사용한 여러가지 애니메이션<br> 적용가능, 라이브러리 사용가능</li>
-                    <li>선택자와 태그의 이해</li>
-                </ul>
-            </li>
-            <li>
-                <a class="folio">javascript</a>
-                <ul class="port close2">
-                    <li>함수 적용으로 기본적인 기능 사용가능</li>
-                    <li>delay와 스크롤을 이용한 기술 사용가능</li>
-                    <li>jquery의 선택자와 기본적인 사용가능</li>
-                    <li>변수의 사용과 함수에 대한 이해</li>
-                </ul>
-            </li>
-            <li>
-                <a class="folio">C/C#</a>
-                <ul class="port close2">
-                    <li>배열과 변수형의 이해</li>
-                    <li>sorting 프로그래밍 학습</li>
-                    <li>다중반복문과 다중if문의 이해</li>
-                    <li>함수 사용과 입출력(scan,print)기능</li>
-                </ul>
-            </li>
-            <li>
-                <a class="folio">python</a>
-                <ul class="port close2">
-                    <li>dictionary 배열의 이해</li>
-                    <li>numpy배열, pandas의 사용</li>
-                    <li>scikit-learn의 사용한 머신러닝</li>
-                    <li>matplotlib를 사용한 데이터의 시각화</li>
-                    <li>데이터 전처리과정(scaling, sampling, dimentionality redution 등)</li>
-                </ul>
-            </li>
-            <div class="qor close2" style=" border-radius:0 0 15px 15px; background: rgba(115, 115, 115, .2);top: 70px; height: 350px; width: 1440px; position: absolute; z-index: -1;"></div>
-        </ul>
-    </div>
-        <h2>Resoft (clone coding)</h2>
-        <div class="resoft_exp">
-        <p><strong> 팀명 </strong>: toco(매일매일 코딩을 한다는 뜻으로 today coding을 줄인말)</p>
-        <p><strong> 인원 및 작성방법</strong> : 6명, 원페이지 구성으로 서로 구역을 나누어 구현하는 방식으로 작성</p>
-        <p><strong> 주요 기술 </strong>: javascript, html, css - 이미지를 불러와 배치 후 wow 애니메이션 라이브러리를 사용하였고 어떤 기기에서나 잘 보일 수 있게 미디어 쿼리를 이용해 배치를 <br>수정하여 작성</p>
-        <p><strong>기간 </strong>: 2022.7.1 ~ 2022.7.15</p>
-        <p><strong>완성된 웹 사이트 </strong> : <a href="https://jamihs.github.io/JAI/resoft/index.html">https://jamihs.github.io/JAI/resoft/index.html</a></p>
-        </div>
-        <div class="resoft_img wow fadeIn" data-wow-delay="0.7s">
-            <div>
-            <p>담당 파트 요구 시안</p>
-            <img src="image.png" alt="">
-        </div>
-        <div>
-            <p>구현 결과</p>
-            <img src="image.gif" alt="">
-        </div>
-        </div>
-        <h2>New Resoft page</h2>
-        <div class="resoft_exp">
-            <p><strong>팀명과 팀원 동일</strong></p>
-            <p><strong>작성방법</strong> : 전 프로젝트와 달리 다수의 페이지로 이루어져 있어 인원당 각자의 페이지를 배정하여 작성</p>
-            <p><strong> 주요 기술 </strong>: javascript, html, css - 기본적인 구조를 html과 css로 작성한 후 메뉴같은 다른 이벤트가 필요한 곳은 javascrip로 작성</p>
-            <p><strong>기간 </strong>: 2022.7.18 ~ 2022.8.12</p>
-            <p><strong>완성된 웹 사이트</strong> : <a href="https://jang-gwang.github.io/toco-renewal/index.html">https://jang-gwang.github.io/toco-renewal/index.html</a></p>
-            <p> <strong> 기본 시안</strong> : <a href="https://xd.adobe.com/view/f608027b-e8cb-443a-a512-91ead94bf53e-a35b/specs/">https://xd.adobe.com/view/f608027b-e8cb-443a-a512-91ead94bf53e-a35b/specs/</a></p>
-            <div class="exp_img">
-                <div class="explain wow fadeInRight" data-wow-delay="0.7s"><img style="width: 300px; height: 400px;" src="image2.png" alt=""> <div class="text"> <p class="title">담당파트</p><p>회사소개 페이지의 하단부와 메뉴바 작성을 맡았습니다.</p> <p>조직도와 특허&인증 그리고 오시는 길 작성을 하였고 1440px의 컨텐츠 공간 안에 모두 보이도록 적용하였습니다. <br>또 미디어 쿼리를 주어서 어떤 기기의 화면크기라도 잘 나올 수 있게 조정하였습니다.</p> </div> </div>
-                <div class="explain wow fadeInLeft" data-wow-delay="0.7s"> <div class="text"> <p class="title"> 메인 메뉴바</p> <p>스크롤 시 스타일의 변화(로고, 배경, 글자색)와 돌아왔을 때 초기화 되는 것 그리고 햄버거 버튼을 클릭 하였을 때 메뉴바가 나오는 효과, 인터넷 창을 줄였을 때 바뀌는 메뉴창이 있습니다.</p> <p>상세 코드 : <a href="https://velog.io/@jamih/810-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80">개발 일지</a></p> </div><img style="width: 600px; height: 350px;" src="image1.gif" alt=""></div>
-                <div class="explain wow fadeInRight" data-wow-delay="0.7s"><img style="width: 600px; height: 350px; " src="image2.gif" alt=""> <div class="text"> <p class="title"> 메뉴바</p> <p>위의 메뉴바와 다르게 색이 변하지 않지만 슬라이드로 작동을 하게 하였고 슬라이드가 다 내려왔을 시 글자가 나타나게 수정하였습니다. 현재 페이지에는 시안에 맞게 하기위해 적용되어 있지는 않습니다.</p> <p>상세 코드 : <a href="">개발 일지</a></p> </div></div>
-                <div class="explain wow fadeInLeft" data-wow-delay="0.7s"><div class="text"> <p class="title"> 연혁 & 인증 + 추가 구현</p><p>그리드를 사용해 틀을 잡고 기본 3x3크기로 보이게 하였고 768px 이하로 내려가면 2행, 480px 이하면 1행으로 나오게 하였습니다.</p> <p>추가로 창화면이 줄었을때 스크롤이 길어져 불편함을 해소하기 위해 더보기 버튼과 줄이기 버튼을 구현하였습니다.</p> <p>상세 코드 : <a href="https://velog.io/@jamih/84-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80">개발 일지</a></p> </div><img style="width:600px; height: 350px;" src="image3.gif" alt=""> </div>
-                <div class="explain wow fadeInRight" data-wow-delay="0.7s"><img style="width:600px; height: 350px; " src="image1.png" alt=""> <div class="text"> <p class="title"> 조직도</p> <p>before와 after를 사용하여 선을 만들어 위치를 잡아주는 형식으로 작업하였습니다. 그리고 fadein효과를 주고 대표이사부터 차례대로 delay조정을 하였습니다.</p> <p>상세 코드 : <a href="https://velog.io/@jamih/727-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80">개발 일지</a></p></div></div>
-                <div class="explain wow fadeInLeft" data-wow-delay="0.7s"><div class="text"> <p class="title"> 오시는 길</p> <p>카카오 API를 가져와서 적용시킨뒤 작성하였습니다. </p> <p>상세 코드 : <a href="https://velog.io/@jamih/720-%EA%B0%9C%EB%B0%9C%EC%9D%BC%EC%A7%80">개발 일지</a></p></div><img style="width:600px; height: 350px; " src="image3.png" alt=""> </div>
+        <div id="tab02">
+            <div class="ss">
+                <img src="./3.SS/SS_1.jpg" alt="">
+                <img src="./3.SS/SS_4.jpg" alt="">
+                <img src="./3.SS/SS_7.jpg" alt="">
+             </div>
+             <div class="ss">
+                <img src="./3.SS/SS_2.jpg" alt="">
+                <img src="./3.SS/SS_8.gif" alt="">
+                <img src="./3.SS/SS_5.jpg" alt="">
+                <img src="./3.SS/SS_6.jpg" alt="">
+            </div>
+            <div class="ss">
+                <img src="./3.SS/SS_3.jpg" alt="">
+                <img src="./3.SS/SS_9.gif" alt="">
+                <img src="./3.SS/SS_10.gif" alt="">
             </div>
         </div>
-    </section>
-        <div class="gray">
-            <div id="bottom">
-            <h2></h2>
-            </div>
+        <div id="tab03">
+            <img src="./4.CARD/CARD_1.jpg" alt="">
+            <img src="./4.CARD/CARD_2.jpg" alt="">
+            <img src="./4.CARD/CARD_3.jpg" alt="">
+            <img src="./4.CARD/CARD_4.jpg" alt="">
+            <img src="./4.CARD/CARD_5.jpg" alt="">
+            <img src="./4.CARD/CARD_6.jpg" alt="">
+            <img src="./4.CARD/CARD_7.jpg" alt="">
+            <img src="./4.CARD/CARD_8.jpg" alt="">
+            <img src="./4.CARD/CARD_9.jpg" alt="">
         </div>
-    <script>     
-        $(window).load(function() {
-            $('#load').hide();
-        });
-        window.onload = function(){
-            setTimeout(function(){
-                scrollTo(0,0);
-            },100);
-        }
-        $(document).ready(function(){
-            $('.start-button').click(function() {
-                $('#start').off('scroll touchmove mousewheel');
-                let location = document.querySelector('#resume').offsetTop;
-                $('html,body').animate({scrollTop:location},0);
-            });
-            
-            $('#start').on('scroll touchmove mousewheel', function(event) {
-                event.preventDefault();
-                event.stopPropagation();
-                return false;
-            });
-
-            const fadeOut = 'magictime fadeOut';
-            const fadeIn = 'magictime fadeIn';
-            const slideLeftReturn = 'magictime spaceOutRight';
-            const slideLeft = 'magictime spaceInRight';
-            const more = 'show';
-            const close = 'close2';
-            const menu = '.inside';
-            const back = '.menu_background';
-            $('.menu1').click(function() {
-            if($(menu).hasClass(more)){
-                $(menu).addClass(slideLeftReturn);
-                $(back).addClass(fadeOut);
-                 setTimeout(function() { $(menu).addClass(close).removeClass(more); $(back).addClass(close).removeClass(more);}, 500);
-            }
-             else if($(menu).hasClass(close))
-            $(menu).removeClass(slideLeftReturn);
-            $(back).removeClass(fadeOut);
-            $(menu).addClass(slideLeft);
-            $(back).addClass(fadeIn);
-            $(menu).addClass(more).removeClass(close);
-            $(back).addClass(more).removeClass(close);
-
-            $(document).on("click",function(e){
-                if($(".menu1").is(e.target)==0){
-                $(menu).removeClass(more).addClass(close);
-                $(back).addClass(close).removeClass(more);
-                }
-            });
-            });
-
-            const spanEl = document.querySelector("#bottom h2");
-            const txtArr = ['Thank you for watching!','Have a good day~!'];
-            let index = 0;
-            let currentTxt = txtArr[index].split("");
-
-
-            const port = '.port, .qor';
-            $('.folio').click(function() {
-            if($(port).hasClass(more)){
-                $(port).addClass(fadeOut);
-                setTimeout(function() { $(port).addClass(close).removeClass(more);}, 500);
-            }
-                else if($(port).hasClass(close))
-                $(port).removeClass(fadeOut);
-                $(port).addClass(fadeIn);
-                $(port).addClass(more).removeClass(close);
-            });
-
-            function writeTxt(){
-                spanEl.textContent += currentTxt.shift(); 
-                if(currentTxt.length !== 0){ 
-                setTimeout(writeTxt, Math.floor(Math.random() * 100));
-                }else{ 
-                currentTxt = spanEl.textContent.split("");
-                setTimeout(deleteTxt, 3000);
-                }
-            }
-            writeTxt();
-
-            function deleteTxt(){
-                currentTxt.pop(); 
-                spanEl.textContent = currentTxt.join("");
-                if(currentTxt.length !== 0){ 
-                setTimeout(deleteTxt, Math.floor(Math.random() * 100));
-                }else{ // ④
-                index = (index + 1) % txtArr.length;
-                currentTxt = txtArr[index].split("");
-                writeTxt();
-                }
-            }
-        });
-    </script>
+        <div id="tab04">
+            <img src="./5.BANNER/BANNER_1.jpg" alt="">
+            <img src="./5.BANNER/BANNER_2.jpg" alt="">
+            <img src="./5.BANNER/BANNER_3.jpg" alt="">
+            <img src="./5.BANNER/BANNER_4.jpg" alt="">
+            <img src="./5.BANNER/BANNER_5.jpg" alt="">
+            <img src="./5.BANNER/BANNER_6.jpg" alt="">
+            <img src="./5.BANNER/BANNER_7.jpg" alt="">
+            <img src="./5.BANNER/BANNER_8.jpg" alt="">
+            <img src="./5.BANNER/BANNER_9.jpg" alt="">
+            <img src="./5.BANNER/BANNER_10.jpg" alt="">
+        </div>
+        <div id="tab05">
+            <div class="ss">
+                <img src="./6.POSTER/POSTER_1.jpg" alt="">
+                <img src="./6.POSTER/POSTER_4.jpg" alt="">
+                <img src="./6.POSTER/POSTER_7.jpg" alt="">
+                <img src="./6.POSTER/POSTER_10.jpg" alt="">
+                <img src="./6.POSTER/POSTER_13.jpg" alt="">
+             </div>
+             <div class="ss">
+                <img src="./6.POSTER/POSTER_2.jpg" alt="">
+                <img src="./6.POSTER/POSTER_5.jpg" alt="">
+                <img src="./6.POSTER/POSTER_8.jpg" alt="">
+                <img src="./6.POSTER/POSTER_11.jpg" alt="">
+                <img src="./6.POSTER/POSTER_14.jpg" alt="">
+            </div>
+            <div class="ss">
+                <img src="./6.POSTER/POSTER_3.jpg" alt="">
+                <img src="./6.POSTER/POSTER_6.jpg" alt="">
+                <img src="./6.POSTER/POSTER_9.jpg" alt="">
+                <img src="./6.POSTER/POSTER_12.jpg" alt="">
+                <img src="./6.POSTER/POSTER_15.jpg" alt="">
+            </div>
+           
+        </div>
+        <div id="tab06">
+            <img src="./7.PPT/PPT_1.jpg" alt="">
+            <img src="./7.PPT/PPT_2.jpg" alt="">
+            <img src="./7.PPT/PPT_3.jpg" alt="">
+            <img src="./7.PPT/PPT_4.jpg" alt="">
+            <img src="./7.PPT/PPT_5.jpg" alt="">
+            <img src="./7.PPT/PPT_6.jpg" alt="">
+            <img src="./7.PPT/PPT_7.jpg" alt="">
+        </div>
+        <div id="tab07">
+            <img src="./8.A/A_1.jpg" alt="">
+            <img src="./8.A/A_2.jpg" alt="">
+            <img src="./8.A/A_3.jpg" alt="">
+        </div>
+        <div id="tab08">
+            <img src="./9.BLOG/BLOG_1.jpg" alt="">
+            <img src="./9.BLOG/BLOG_2.jpg" alt="">
+        </div>
+        <div id="tab09">
+            <img src="./10.J/J_4.jpg" alt="">
+            <img src="./10.J/J_3.jpg" alt="">
+            <img src="./10.J/J_2.png" alt="">
+            <img src="./10.J/J_1.jpg" alt="">
+        </div>
+        <div id="tab10">
+            <img src="./11.CARDVIEW/CARDVIEW_1.jpg" alt="">
+            <img src="./11.CARDVIEW/CARDVIEW_2.jpg" alt="">
+        </div>
+    </div><!--tab-->
 </body>
+<script>
+  $(function(){
+    $('.tabcontent > div').hide();
+    $('.tabnav a').click(function () {
+        $('.tabcontent > div').hide().filter(this.hash).fadeIn();
+        $('.tabnav a').removeClass('active');
+        $('.menu').removeClass('active');
+        $('.tabcover').removeClass('active');
+        $(this).addClass('active');
+        return false;
+    }).filter(':eq(0)').click();
+  });
+  $('.menubutton').click(function() {
+    $('.menu').toggleClass('active');
+    $('.tabcover').toggleClass('active');
+  });
+</script>
 </html>
